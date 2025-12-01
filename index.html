@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartFun — Final</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HOME -->
+  <section id="homePage" class="panel active page-home">
+    <div class="card">
+
+      <div class="brand">SMARTFUN</div>
+      <p class="lead">Kuis edukatif seru — kumpulkan poin, buka level, beli avatar</p>
+
+      <div class="center actions">
+        <button id="btnStart" class="btn">Mulai Kuis</button>
+        <button id="btnShop" class="btn ghost">Toko</button>
+        <button id="btnHistory" class="btn ghost">Lihat Riwayat</button>
+      </div>
+
+      <div class="status mt12">Total Points: <strong id="wallet">0</strong></div>
+
+      <!-- HISTORY IN HOME -->
+      <div id="homeHistoryPanel" class="home-history" hidden>
+        <h3>Riwayat Permainan</h3>
+        <div id="historyList" class="history-list"></div>
+
+        <div class="center mt12">
+          <button id="btnResetData" class="btn danger">Reset Data</button>
+          <button id="btnCloseHistory" class="btn">Tutup</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- NAME + AVATAR -->
+  <section id="namePage" class="panel page-name">
+    <div class="card name-card">
+      
+      <!-- LEFT AVATAR -->
+      <div class="name-left">
+        <h3>Pilih Avatar</h3>
+        <div id="avatarList" class="avatar-list"></div>
+      </div>
+
+      <!-- RIGHT NAME INPUT -->
+      <div class="name-right">
+        <h2>Masukkan Nama Kamu</h2>
+        <input id="inputName" class="input" placeholder="Nama...">
+
+        <div class="mt12">
+          <button id="btnToSubjects" class="btn">Lanjut Pilih Mapel</button>
+          <button id="btnNameBack" class="btn ghost">Kembali</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SUBJECT -->
+  <section id="subjectPage" class="panel page-subject">
+    <div class="card">
+      <h2>Pilih Mata Pelajaran</h2>
+
+      <div class="subject-row mt12">
+        <button class="btn subject-btn" data-sub="mat">Matematika</button>
+        <button class="btn subject-btn" data-sub="sci">IPA</button>
+        <button class="btn subject-btn" data-sub="hist">Sejarah</button>
+        <button class="btn subject-btn" data-sub="chem">Kimia</button>
+      </div>
+
+      <div class="mt12">
+        <button id="btnSubBack" class="btn ghost">Kembali</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEVEL -->
+  <section id="levelPage" class="panel page-level">
+    <div class="card">
+      <h2 id="subjectTitle">Pilih Level</h2>
+      <p class="note">Level 2 & 3 terbuka jika total points ≥ 165.</p>
+
+      <div class="level-list mt12">
+        <button id="btnL1" class="btn level-btn full" data-level="1">
+          Level 1 — 10 Soal
+        </button>
+
+        <button id="btnL2" class="btn level-btn full locked" data-level="2">
+          Level 2 — 10 Soal (Terkunci)
+        </button>
+
+        <button id="btnL3" class="btn level-btn full locked" data-level="3">
+          Level 3 — 20 Soal (Terkunci)
+        </button>
+      </div>
+
+      <div class="mt12">
+        <button id="btnLevelBack" class="btn ghost">Kembali</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- QUIZ -->
+  <section id="quizPage" class="panel page-quiz">
+    <div class="quiz-header">
+      <div class="player-info">
+        <div id="playerAvatar" class="avatar avatar-lg"></div>
+        <div id="playerNameLabel" class="player-name"></div>
+      </div>
+
+      <div class="progress"><div id="progressFill" class="fill"></div></div>
+      <div id="quizTimer" class="timer">00:00</div>
+    </div>
+
+    <div class="card">
+      <div id="qText" class="q-text"></div>
+      <ul id="options" class="answers"></ul>
+
+      <div id="charArea" class="character-wrap"></div>
+
+      <div class="controls mt12">
+        <button id="btnPrev" class="btn small">Prev</button>
+        <button id="btnNext" class="btn small">Next</button>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- RESULT -->
+  <section id="resultPage" class="panel page-result">
+    <div class="card">
+      <h2>Hasil Quiz</h2>
+
+      <div class="center mt8">
+        <div>Point: <strong id="earnedPoints">0</strong></div>
+        <div class="mt6">Total Point: <strong id="walletNow">0</strong></div>
+      </div>
+
+      <div id="resultList" class="result-list mt12"></div>
+
+      <div class="center mt12" id="resultActions">
+        <button id="btnContinueNextLevel" class="btn" style="display:none">Lanjut Level Berikutnya</button>
+        <button id="btnResultRetry" class="btn">Ulang / Ganti Nama</button>
+        <button id="btnResultHome" class="btn ghost">Kembali Home</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SHOP -->
+  <section id="shopPage" class="panel page-shop">
+    <div class="card">
+      <h2>Toko Avatar</h2>
+
+      <div id="shopGrid" class="shop-grid"></div>
+
+      <div class="center mt12">
+        <button id="btnCloseShop" class="btn">Tutup Toko</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
